@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.apache.spark.sql.functions.*;
 
 /**
- * Query 3 — DataFrame API. Average annual per-capita income per ZIP for
+ * Query 3 - DataFrame API. Average annual per-capita income per ZIP for
  * 2020–2021, joining 2020 census population with 2021 median household income.
  *
  * The income dataset is per-household, so we convert it to per-capita using the
@@ -51,7 +51,7 @@ public class Q3Df {
         Dataset<Row> joined = compute(
                 Datasets.censusPopulation(spark), Datasets.income(spark), strategy);
 
-        System.out.println("== Q3 DataFrame — join strategy hint: " + strategy + " ==");
+        System.out.println("== Q3 DataFrame - join strategy hint: " + strategy + " ==");
         joined.explain();
 
         AtomicReference<List<Row>> box = new AtomicReference<>();

@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.apache.spark.sql.functions.*;
 
 /**
- * Query 1 — pure DataFrame API.
+ * Query 1 - pure DataFrame API.
  *
  * Ranks the parts of the day by the share of crime records that took place on
  * the STREET. The denominator is the total number of records (constant across
@@ -53,7 +53,7 @@ public class Q1Df {
         parts.sort((a, b) -> Double.compare(b.pct(), a.pct()));
 
         System.out.println();
-        System.out.println("==== " + title + " — STREET share of all records, by part of day ====");
+        System.out.println("==== " + title + " - STREET share of all records, by part of day ====");
         System.out.println("part | street_crimes | total_records | pct(%)");
         for (Part p : parts) {
             System.out.printf("%-10s | %d | %d | %.4f%n", p.name(), p.street(), total, p.pct());

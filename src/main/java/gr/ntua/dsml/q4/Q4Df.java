@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.apache.spark.sql.functions.*;
 
 /**
- * Query 4 — DataFrame API. For each police station: how many crimes are closest
+ * Query 4 - DataFrame API. For each police station: how many crimes are closest
  * to it (vs every other station) and the average distance of those crimes.
  *
  * Join: each crime is matched against all 21 stations (a cross / nearest-
@@ -24,7 +24,7 @@ import static org.apache.spark.sql.functions.*;
  * per-crime argmin is then a group-by on a synthetic crime id.
  *
  * Requirement 6: args[0] sets the join hint. Only BROADCAST and
- * SHUFFLE_REPLICATE_NL apply to a non-equi join — MERGE / SHUFFLE_HASH need
+ * SHUFFLE_REPLICATE_NL apply to a non-equi join - MERGE / SHUFFLE_HASH need
  * equi-keys and are ignored by Catalyst here; explain() makes that visible.
  */
 public class Q4Df {
@@ -67,7 +67,7 @@ public class Q4Df {
         Dataset<Row> result = compute(
                 Datasets.crime(spark), Datasets.policeStations(spark), strategy);
 
-        System.out.println("== Q4 DataFrame — join strategy hint: " + strategy + " ==");
+        System.out.println("== Q4 DataFrame - join strategy hint: " + strategy + " ==");
         result.explain();
 
         AtomicReference<List<Row>> box = new AtomicReference<>();

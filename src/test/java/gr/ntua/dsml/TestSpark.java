@@ -11,7 +11,7 @@ import org.apache.spark.sql.types.StructType;
 import java.util.List;
 
 /**
- * One local SparkSession shared by all tests (built lazily, never stopped — the
+ * One local SparkSession shared by all tests (built lazily, never stopped - the
  * JVM teardown reclaims it). Keeping a single SparkContext per JVM avoids the
  * cost and fragility of stopping/restarting it between test classes.
  */

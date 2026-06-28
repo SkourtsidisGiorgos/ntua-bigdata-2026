@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.apache.spark.sql.functions.*;
 
 /**
- * Query 1 — DataFrame API but with the time-of-day classification done by a
+ * Query 1 - DataFrame API but with the time-of-day classification done by a
  * user-defined function instead of a native {@code CASE WHEN}. Same result as
  * {@link Q1Df}; the point is to compare cost (a UDF is a black box to Catalyst,
  * so it cannot be optimized/codegen-fused and pays serialization overhead).

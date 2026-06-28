@@ -7,8 +7,8 @@ import java.util.List;
 /**
  * Prints an already-collected result to stdout (the driver pod log, which
  * scripts/logs.sh fetches). We print from a collected List rather than calling
- * Dataset.show() so the Spark job is triggered exactly once — inside Bench.time
- * — and the measured time is not inflated by a second pass for display.
+ * Dataset.show() so the Spark job is triggered exactly once - inside Bench.time
+ * - and the measured time is not inflated by a second pass for display.
  */
 public final class Output {
     private Output() {}

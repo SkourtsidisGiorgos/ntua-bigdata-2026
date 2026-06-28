@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Unit test for the custom GeoJSON loader ({@link Datasets#censusPopulation})
  * against a tiny in-repo fixture, so the line-by-line parse (keep Feature lines,
  * drop the FeatureCollection wrapper, strip the trailing comma, JSON-parse each
- * Feature, project ZCTA20/POP20/HOUSING20) is exercised on every CI run — not
+ * Feature, project ZCTA20/POP20/HOUSING20) is exercised on every CI run - not
  * only when the 180MB real file happens to be present (see LoaderLocalTest).
  *
  * Fixture: 3 Feature lines (last one without a trailing comma), zips

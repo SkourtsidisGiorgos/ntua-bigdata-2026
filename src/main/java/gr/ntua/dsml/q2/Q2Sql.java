@@ -13,7 +13,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.apache.spark.sql.functions.col;
 
 /**
- * Query 2 — Spark SQL API. Same result as {@link Q2Df}, expressed as a SQL
+ * Query 2 - Spark SQL API. Same result as {@link Q2Df}, expressed as a SQL
  * window query. Both go through Catalyst, so the plans (and times) should be
  * close; that is the point of the comparison.
  */

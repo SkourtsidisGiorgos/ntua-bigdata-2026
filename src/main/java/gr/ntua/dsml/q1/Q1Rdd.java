@@ -16,10 +16,10 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.apache.spark.sql.functions.col;
 
 /**
- * Query 1 — RDD API. The CSV is still read through Spark's DataFrameReader (so
+ * Query 1 - RDD API. The CSV is still read through Spark's DataFrameReader (so
  * the univocity parser handles quoting/types), then dropped to a JavaRDD&lt;Row&gt;
  * and processed with map/reduceByKey. No Catalyst optimization or columnar
- * scan applies here — that is the contrast with {@link Q1Df}.
+ * scan applies here - that is the contrast with {@link Q1Df}.
  */
 public class Q1Rdd {
 
@@ -48,7 +48,7 @@ public class Q1Rdd {
         parts.sort((a, b) -> Double.compare(b.pct(), a.pct()));
 
         System.out.println();
-        System.out.println("==== " + title + " — STREET share of all records, by part of day ====");
+        System.out.println("==== " + title + " - STREET share of all records, by part of day ====");
         System.out.println("part | street_crimes | total_records | pct(%)");
         for (Part p : parts) {
             System.out.printf("%-10s | %d | %d | %.4f%n", p.name(), p.street(), total, p.pct());

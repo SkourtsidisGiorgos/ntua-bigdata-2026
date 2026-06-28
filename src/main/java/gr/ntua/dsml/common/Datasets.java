@@ -113,7 +113,7 @@ public final class Datasets {
      * line. Reading it with multiLine=true forces the whole 180MB file into a
      * single record/task and OOMs small executors, so instead we read it as
      * text, keep the per-Feature lines (dropping the wrapper), strip the
-     * trailing comma, and JSON-parse line by line — fully distributed and
+     * trailing comma, and JSON-parse line by line - fully distributed and
      * memory-light. Only the needed properties are kept; geometry is discarded.
      */
     public static Dataset<Row> censusPopulation(SparkSession spark) {
