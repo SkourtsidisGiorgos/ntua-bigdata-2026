@@ -15,8 +15,7 @@ public class ProbeCommon {
         System.out.println("==== income ====");
         Dataset<Row> income = Datasets.income(spark);
         income.show(5, false);
-        System.out.println("income rows = " + income.count()
-                + ", null income = " + income.filter(col("income").isNull()).count());
+        System.out.println("income rows = " + income.count() + ", null income = " + income.filter(col("income").isNull()).count());
 
         System.out.println("==== police stations ====");
         Dataset<Row> stations = Datasets.policeStations(spark);
@@ -26,8 +25,7 @@ public class ProbeCommon {
         System.out.println("==== census population ====");
         Dataset<Row> census = Datasets.censusPopulation(spark);
         census.show(5, false);
-        System.out.println("census block rows = " + census.count()
-                + ", distinct zips = " + census.select("zip").distinct().count());
+        System.out.println("census block rows = " + census.count() + ", distinct zips = " + census.select("zip").distinct().count());
 
         System.out.println("==== crime (sample, parse check) ====");
         Dataset<Row> crime = Datasets.crime(spark);

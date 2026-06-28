@@ -17,17 +17,15 @@ import static org.apache.spark.sql.functions.*;
  * Query 1 - pure DataFrame API.
  *
  * Ranks the parts of the day by the share of crime records that took place on
- * the STREET. The denominator is the total number of records (constant across
- * parts), so the ranking is the same whichever total is used; we report the
- * percentage against ALL records.
+ * the STREET. The denominator is the total number of records (constant across parts),
+ * so the ranking is the same whichever total is used; we report thepercentage against ALL records.
  *
- * The time-of-day bucketing is a Catalyst {@code CASE WHEN} (see
- * {@link TimeBucket#column}); {@link Q1DfUdf} does the same via a UDF and
- * {@link Q1Rdd} via the RDD API, so the three are directly comparable.
+ * The time-of-day bucketing is a Catalyst `CASE WHEN` (see TimeBucket#column);
+ * Q1DfUdf does the same via a UDF and Q1Rdd via the RDD API, so the three are directly comparable.
  */
 public class Q1Df {
 
-    /** One row per part of day: {@code part}, {@code street} count, {@code total} count. */
+    /** One row per part of day: part, street count, total count. */
     public static Dataset<Row> compute(Dataset<Row> crime) {
         return crime
                 .filter(col("time_occ").isNotNull())
@@ -53,7 +51,7 @@ public class Q1Df {
         parts.sort((a, b) -> Double.compare(b.pct(), a.pct()));
 
         System.out.println();
-        System.out.println("==== " + title + " - STREET share of all records, by part of day ====");
+        System.out.println("--- " + title + " - STREET share of all records, by part of day ---");
         System.out.println("part | street_crimes | total_records | pct(%)");
         for (Part p : parts) {
             System.out.printf("%-10s | %d | %d | %.4f%n", p.name(), p.street(), total, p.pct());

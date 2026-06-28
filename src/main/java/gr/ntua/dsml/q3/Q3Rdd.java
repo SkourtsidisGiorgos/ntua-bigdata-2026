@@ -15,9 +15,9 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.apache.spark.sql.functions.col;
 
 /**
- * Query 3 - RDD API. Same computation as {@link Q3Df}: aggregate census
+ * Query 3 - RDD API. Same computation as Q3Df: aggregate census
  * population+households per ZIP, join with income, derive per-capita income.
- * The join here is an explicit {@code JavaPairRDD.join} (hash join) - no
+ * The join here is an explicit JavaPairRDD.join (hash join) - no
  * Catalyst, so no broadcast/sort-merge choice is available, which is the
  * contrast the requirement asks us to comment on.
  */

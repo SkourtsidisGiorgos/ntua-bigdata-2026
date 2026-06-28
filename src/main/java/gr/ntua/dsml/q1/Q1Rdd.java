@@ -16,10 +16,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.apache.spark.sql.functions.col;
 
 /**
- * Query 1 - RDD API. The CSV is still read through Spark's DataFrameReader (so
- * the univocity parser handles quoting/types), then dropped to a JavaRDD&lt;Row&gt;
- * and processed with map/reduceByKey. No Catalyst optimization or columnar
- * scan applies here - that is the contrast with {@link Q1Df}.
+ * Query 1 - RDD API. The CSV is still read through Spark's DataFrameReader (so the univocity parser handles quoting/types),
+ * then dropped to a JavaRDD<Row> and processed with map/reduceByKey. No Catalyst optimization or columnar scan applies.
  */
 public class Q1Rdd {
 
@@ -31,8 +29,7 @@ public class Q1Rdd {
                     String part = TimeBucket.of(r.getInt(1));
                     long street = "STREET".equals(r.getString(0)) ? 1L : 0L;
                     return new Tuple2<>(part, new long[]{street, 1L});
-                })
-                .reduceByKey((a, b) -> new long[]{a[0] + b[0], a[1] + b[1]});
+                }).reduceByKey((a, b) -> new long[]{a[0] + b[0], a[1] + b[1]});
     }
 
     public static void printParts(String title, List<Tuple2<String, long[]>> agg) {

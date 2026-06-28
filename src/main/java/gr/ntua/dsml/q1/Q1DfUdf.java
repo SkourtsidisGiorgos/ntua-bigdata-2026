@@ -15,16 +15,15 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.apache.spark.sql.functions.*;
 
 /**
- * Query 1 - DataFrame API but with the time-of-day classification done by a
- * user-defined function instead of a native {@code CASE WHEN}. Same result as
- * {@link Q1Df}; the point is to compare cost (a UDF is a black box to Catalyst,
- * so it cannot be optimized/codegen-fused and pays serialization overhead).
+ * Query 1 DataFrame API but with the time-of-day classification done by a user-defined function instead of a native {@code CASE WHEN}.
+ * Same result as {@link Q1Df};
+ * the point is to compare cost (a UDF is a black box to Catalyst, so it cannot be optimized/codegen-fused and pays serialization overhead).
  */
 public class Q1DfUdf {
 
     public static final String UDF_NAME = "part_of_day";
 
-    /** Registers the bucketing UDF and runs the same aggregation as {@link Q1Df#compute}. */
+    /** Registers the bucketing UDF and runs the same aggregation as Q1Df#compute. */
     public static Dataset<Row> compute(SparkSession spark, Dataset<Row> crime) {
         spark.udf().register(UDF_NAME,
                 (UDF1<Integer, String>) t -> t == null ? null : TimeBucket.of(t),

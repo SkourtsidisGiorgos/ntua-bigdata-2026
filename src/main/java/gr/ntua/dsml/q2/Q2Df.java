@@ -15,14 +15,10 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.apache.spark.sql.functions.*;
 
 /**
- * Query 2 - DataFrame API. For each year, the 3 months with the most crimes,
+ * Query 2 DataFrame API. For each year, the 3 months with the most crimes,
  * with their rank. Output ordered by year asc, crime_total desc.
- *
- * Ties broken by month asc so the top-3 is deterministic ({@code row_number}
- * rather than {@code rank}, which could emit more than 3 rows on a tie).
- *
- * main() reads from CSV by default, or from a Parquet path given as args[0] -
- * that is how Requirement 1 compares csv vs parquet on the same query.
+ * Ties broken by month asc so the top-3 is deterministic (row_number rather than rank, which could emit more than 3 rows on a tie).
+ * main() reads from CSV by default, or from a Parquet path given as args[0]
  */
 public class Q2Df {
 

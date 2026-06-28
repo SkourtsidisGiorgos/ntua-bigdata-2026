@@ -14,8 +14,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.apache.spark.sql.functions.*;
 
 /**
- * Query 3 - DataFrame API. Average annual per-capita income per ZIP for
- * 2020–2021, joining 2020 census population with 2021 median household income.
+ * Query 3 - DataFrame API. Average annual per-capita income per ZIP for 2020–2021, joining 2020 census population with 2021 median household income.
  *
  * The income dataset is per-household, so we convert it to per-capita using the
  * average household size derived from the census:
@@ -23,8 +22,7 @@ import static org.apache.spark.sql.functions.*;
  *             = median_household_income * households / population
  * (households approximated by HOUSING20 housing units.)
  *
- * main() takes an optional join-strategy hint as args[0] (Requirement 6) and
- * prints explain() so the chosen physical join is visible in the log.
+ * main() takes an optional join-strategy hint as args[0] (Requirement 6) and prints explain() so the chosen physical join is visible in the log.
  */
 public class Q3Df {
 
