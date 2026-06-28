@@ -51,7 +51,7 @@ public class Q1Df {
         parts.sort((a, b) -> Double.compare(b.pct(), a.pct()));
 
         System.out.println();
-        System.out.println("--- " + title + " - STREET share of all records, by part of day ---");
+        System.out.println("- " + title + " - STREET share of all records, by part of day -");
         System.out.println("part | street_crimes | total_records | pct(%)");
         for (Part p : parts) {
             System.out.printf("%-10s | %d | %d | %.4f%n", p.name(), p.street(), total, p.pct());

@@ -67,8 +67,8 @@ class Q1Test {
         assertExpected(new HashMap<>(agg.collectAsMap()));
     }
 
-    // --- Null TIME OCC: must be dropped identically by all three impls so they
-    //     stay in agreement (df filters isNotNull, rdd filters isNullAt(1)). ---
+    // - Null TIME OCC: must be dropped identically by all three impls so they
+    //     stay in agreement (df filters isNotNull, rdd filters isNullAt(1)). -
 
     private static Dataset<Row> crimeWithNullTime() {
         return df(List.of(
