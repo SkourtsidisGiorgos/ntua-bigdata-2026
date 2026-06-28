@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "tiny",
+"features": [
+{ "type": "Feature", "properties": { "OBJECTID": 1, "ZCTA20": "90001", "POP20": 100, "HOUSING20": 40 }, "geometry": { "type": "Point", "coordinates": [ 0.0, 0.0 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 2, "ZCTA20": "90001", "POP20": 50, "HOUSING20": 20 }, "geometry": { "type": "Point", "coordinates": [ 0.0, 0.0 ] } },
+{ "type": "Feature", "properties": { "OBJECTID": 3, "ZCTA20": "90002", "POP20": 200, "HOUSING20": 50 }, "geometry": { "type": "Point", "coordinates": [ 0.0, 0.0 ] } }
+]
+}

@@ -1,0 +1,32 @@
+# Cluster / VPN credentials (sensitive)
+*.ovpn
+config
+
+# Logs
+openvpn.log
+
+# Local Spark/Hadoop clients
+.tools/
+target/
+.idea/
+*.iml
+
+# Local copy of datasets (pulled from HDFS for EDA; ~1GB)
+data/
+
+# Notebook / Python EDA
+.ipynb_checkpoints/
+.venv/
+__pycache__/
+
+# Generated deliverables
+dist/
+
+# LaTeX build artifacts
+report/*.aux
+report/*.log
+report/*.xdv
+report/*.out
+report/*.fls
+report/*.fdb_latexmk
+report/build.log
